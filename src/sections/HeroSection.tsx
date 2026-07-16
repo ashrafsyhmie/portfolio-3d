@@ -1,7 +1,7 @@
 import { ContactButton } from '../components/ContactButton';
 import { FadeIn } from '../components/FadeIn';
 import { Magnet } from '../components/Magnet';
-import heroImage from '../../../assets/hero-image1.png';
+import heroImage from '../assets/portfolio/hero-image.png';
 
 const navItems = [
   { label: 'About', href: '#about' },

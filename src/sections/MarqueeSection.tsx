@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import thayyib from '../../../assets/16-07-2026, 01-46-18 (edited).gif';
+import thayyib from '../assets/portfolio/thayyib-preview.gif';
 
 type MarqueeMedia = {
   src: string;
