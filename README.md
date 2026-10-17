@@ -1,27 +1,46 @@
-# Ashraf -- Software Engineering Portfolio
+# Hey, I’m Ashraf 👋
 
-A responsive, motion-driven portfolio landing page for Ashraf, a software engineering student building clean and thoughtful digital products.
+Software Engineering student, developer, and someone who enjoys turning an idea into something people can actually use.
 
-## Run locally
+This is my little corner of the internet: a place for the things I build, the experiences I learn from, and a bit of life beyond the code.
 
-```bash
-npm install
-npm run dev
-```
+## Come take a look
 
-Open the local URL printed by Vite.
+**[Visit my portfolio → ashrafsyhmie.my](https://ashrafsyhmie.my)**
 
-## Production build
+Explore my projects, browse moments from events and hackathons, or get in touch with an idea of your own.
 
-```bash
-npm run build
-npm run preview
-```
+## Things I’ve been working on
 
-## Main structure
+### Thayyib
+A halal compliance management system where I served as Development Lead. Our project earned runner-up in a hackathon.
 
-- `src/components` -- reusable buttons, theme toggle, magnetic hover, fade-in, animated text, and project cards
-- `src/sections` -- Hero, Marquee, About, Skills, Picture Reel, and Projects
-- `src/index.css` -- global reset, Kanit font import, theme tokens, and gradient heading utility
+[Explore Thayyib](https://thayyib.vercel.app/)
 
-The contact links currently use `hello@ashraf.dev`; replace this placeholder address with Ashraf's final contact email before launch.
+### Sentinel-U
+A university disaster management and visual control project, with a focus on campus safety. Project details and completed milestones are still being documented.
+
+### GDGoC UNITEN
+A home for the Google Developer Groups on Campus community at UNITEN. I contributed as a developer to the website introducing the community and supporting its membership activities.
+
+[Meet the community](https://www.gdgocuniten.my/)
+
+## A little about my journey
+
+- **2025–2028 · Universiti Tenaga Nasional (UNITEN)** — Bachelor of Software Engineering (Hons.), GPA 3.94, JPA Scholar.
+- **2022–2025 · German-Malaysian Institute (GMI)** — Diploma in Software Engineering (Software Testing), GPA 3.78, MARA Sponsorship Recipient.
+- **2017–2021 · MRSM Johor Bahru**
+
+Along the way, this portfolio is collecting more than finished projects. There’s a gallery of community moments, and a multimedia section ready for creative work beyond software.
+
+## Let’s connect
+
+Have a project to discuss, a question about my work, or just want to say hello?
+
+- [Send me an email](mailto:icerafsyahmie12@gmail.com)
+- [Find me on LinkedIn](https://www.linkedin.com/in/ashraf-syahmie-1969a8269/)
+- [Explore my GitHub](https://github.com/ashrafsyhmie)
+
+---
+
+Built and updated as I learn. There’s always another idea on the way.
