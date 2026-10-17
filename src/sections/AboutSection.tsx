@@ -6,7 +6,7 @@ import gdgGlass from '../assets/about/gdg-glass.png';
 import vscodeGlass from '../assets/about/vscode-glass.png';
 
 const aboutText =
-  "I'm Ashraf, a software engineering student focused on building clean, reliable, and human-friendly digital products. I enjoy turning ideas into working interfaces, learning through real projects, and improving the small details that make software feel clear and useful.";
+  "I'm Ashraf Syahmie, a Software Engineering student at Universiti Tenaga Nasional (UNITEN), Malaysia. My work spans halal compliance management, university disaster management, and developer community websites. I served as Development Lead for Thayyib, a halal compliance management system that earned runner-up in a hackathon, and contributed as a developer to Sentinel-U and the GDGoC UNITEN website. I enjoy turning practical problems into useful digital experiences and learning through hands-on projects. My focus is on growing as a developer while building software with a clear purpose for the people who use it.";
 
 const identityBadges = [
   {
@@ -28,16 +28,16 @@ const identityBadges = [
 
 const highlights = [
   {
-    label: 'Club',
-    value: 'GDGOC UNITEN',
+    label: 'University',
+    value: 'UNITEN',
   },
   {
     label: 'Focus',
     value: 'Software engineering',
   },
   {
-    label: 'Mode',
-    value: 'Learning by building',
+    label: 'Location',
+    value: 'Malaysia',
   },
 ] as const;
 
@@ -46,33 +46,33 @@ const decorations = [
     src: 'https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png',
     alt: '',
     className:
-      'absolute left-[1%] top-[4%] w-[120px] sm:left-[2%] sm:w-[160px] md:left-[4%] md:w-[210px]',
+      'w-[72px] -rotate-12 -translate-y-3 sm:w-[110px] md:w-[140px]',
     delay: 0.1,
-    x: -80,
+    x: -20,
   },
   {
     src: gdgGlass,
     alt: '',
     className:
-      'absolute bottom-[5%] left-[2%] w-[100px] sm:left-[5%] sm:w-[150px] md:left-[8%] md:w-[210px]',
+      'w-[82px] rotate-6 translate-y-6 sm:w-[130px] md:w-[170px]',
     delay: 0.25,
-    x: -80,
+    x: -10,
   },
   {
     src: vscodeGlass,
     alt: '',
     className:
-      'absolute right-[1%] top-[5%] w-[120px] sm:right-[3%] sm:w-[170px] md:right-[6%] md:w-[230px]',
+      'w-[86px] -rotate-6 -translate-y-5 sm:w-[135px] md:w-[180px]',
     delay: 0.15,
-    x: 80,
+    x: 10,
   },
   {
     src: basketballGlass,
     alt: '',
     className:
-      'absolute bottom-[5%] right-[1%] w-[120px] sm:right-[5%] sm:w-[170px] md:right-[8%] md:w-[230px]',
+      'w-[72px] rotate-12 translate-y-5 sm:w-[110px] md:w-[145px]',
     delay: 0.3,
-    x: 80,
+    x: 20,
   },
 ] as const;
 
@@ -82,31 +82,26 @@ export function AboutSection() {
       id="about"
       className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[var(--page-bg)] px-5 py-20 transition-colors duration-300 sm:px-8 md:px-10"
     >
-      {decorations.map((decoration) => (
-        <FadeIn
-          key={decoration.src}
-          delay={decoration.delay}
-          duration={0.9}
-          x={decoration.x}
-          y={0}
-          className={`${decoration.className} pointer-events-none z-0`}
-        >
-          <img
-            src={decoration.src}
-            alt={decoration.alt}
-            className="h-auto w-full select-none object-contain"
-            loading="lazy"
-            decoding="async"
-            draggable={false}
-          />
-        </FadeIn>
-      ))}
-
       <div className="relative z-10 flex w-full max-w-5xl flex-col items-center text-center">
         <div className="flex flex-col items-center gap-10 sm:gap-14 md:gap-16">
           <FadeIn as="h2" delay={0} y={40} className="hero-heading text-[clamp(3rem,12vw,160px)] font-black uppercase leading-none tracking-tight">
             About me
           </FadeIn>
+
+          <div className="pointer-events-none grid w-full max-w-4xl grid-cols-4 items-center justify-items-center gap-1 py-8 sm:gap-5 sm:py-10" aria-hidden="true">
+            {decorations.map((decoration) => (
+              <FadeIn key={decoration.src} delay={decoration.delay} duration={0.9} x={decoration.x} y={0} className="flex w-full justify-center">
+                <img
+                  src={decoration.src}
+                  alt={decoration.alt}
+                  className={`${decoration.className} aspect-square max-w-full select-none object-contain drop-shadow-sm`}
+                  loading="lazy"
+                  decoding="async"
+                  draggable={false}
+                />
+              </FadeIn>
+            ))}
+          </div>
 
           <AnimatedText
             text={aboutText}

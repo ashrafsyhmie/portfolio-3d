@@ -7,7 +7,7 @@ const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#services' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: 'mailto:hello@ashraf.dev' },
+  { label: 'Contact', href: '#contact' },
 ] as const;
 
 export function HeroSection() {
@@ -52,11 +52,11 @@ export function HeroSection() {
         </FadeIn>
       </div>
 
-      <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[280px] -translate-x-1/2 -translate-y-1/2 sm:bottom-0 sm:top-auto sm:w-[360px] sm:translate-y-0 md:w-[440px] lg:w-[520px]">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[min(280px,70vw,55svh)] -translate-x-1/2 -translate-y-1/2 sm:bottom-12 sm:top-auto sm:w-[min(520px,55vw,62svh)] sm:translate-y-0">
         <FadeIn delay={0.6} y={30}>
           <Magnet
-            padding={150}
-            strength={3}
+            padding={50}
+            strength={10}
             activeTransition="transform 0.3s ease-out"
             inactiveTransition="transform 0.6s ease-in-out"
             className="pointer-events-auto"
@@ -64,7 +64,10 @@ export function HeroSection() {
             <img
               src={heroImage}
               alt="Ashraf, software engineering student"
-              className="aspect-[4/5] h-auto w-full select-none object-contain"
+               className="h-auto w-full select-none object-contain"
+               width={1982}
+               height={1915}
+               fetchPriority="high"
               draggable={false}
             />
           </Magnet>
@@ -74,11 +77,14 @@ export function HeroSection() {
       <div className="relative z-20 mt-auto flex items-end justify-between gap-6 px-6 pb-7 sm:pb-8 md:px-10 md:pb-10">
         <FadeIn delay={0.35} y={20}>
           <p className="max-w-[160px] text-[clamp(0.75rem,1.4vw,1.5rem)] font-light uppercase leading-snug tracking-wide text-[var(--page-fg)] sm:max-w-[220px] md:max-w-[260px]">
-            a software engineering student building thoughtful, useful digital products
+            I build digital solutions that solve real problems.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.5} y={20}>
+          <a href="#projects" className="mb-4 block text-center text-sm font-medium uppercase tracking-wider underline underline-offset-4">
+            View My Projects
+          </a>
           <ContactButton />
         </FadeIn>
       </div>

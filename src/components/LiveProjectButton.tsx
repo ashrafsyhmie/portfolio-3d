@@ -1,10 +1,10 @@
 import { ArrowUpRight } from 'lucide-react';
 
 interface LiveProjectButtonProps {
-  href?: string;
+  href: string;
 }
 
-export function LiveProjectButton({ href = '#' }: LiveProjectButtonProps) {
+export function LiveProjectButton({ href }: LiveProjectButtonProps) {
   return (
     <a
       href={href}

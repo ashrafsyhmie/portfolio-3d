@@ -7,7 +7,7 @@ interface ContactButtonProps {
 export function ContactButton({ className = '' }: ContactButtonProps) {
   return (
     <a
-      href="mailto:hello@ashraf.dev"
+      href="#contact"
       className={`group inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 text-xs font-medium uppercase tracking-widest text-white outline outline-2 outline-offset-[-3px] outline-white transition-transform duration-300 hover:scale-[1.03] focus-visible:outline-offset-2 sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base ${className}`}
       style={{
         background:

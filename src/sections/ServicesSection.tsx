@@ -4,32 +4,56 @@ const services = [
   {
     number: '01',
     name: 'Frontend Development',
+    logos: [{ file: 'react', name: 'React' }, { file: 'nextjs', name: 'Next.js' }],
+    caption: 'Interfaces, built component by component',
+    tools: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML5 / Modern CSS', 'Responsive UI'],
     description:
-      'Building responsive interfaces with React, TypeScript, Tailwind CSS, and careful attention to layout, accessibility, and interaction details.',
+      'Building responsive interfaces, reusable components, and clear client-side interactions.',
   },
   {
     number: '02',
-    name: 'Backend Foundations',
+    name: 'Backend Development',
+    logos: [{ file: 'nodejs', name: 'Node.js' }, { file: 'express', name: 'Express' }],
+    caption: 'Request → logic → response',
+    tools: ['Node.js', 'Express.js', 'REST APIs', 'Serverless', 'JWT / OAuth Auth', 'Middleware Pipelines'],
     description:
-      'Designing practical APIs, data flows, and server-side logic with a focus on clarity, maintainability, and predictable behavior.',
+      'Developing APIs, server-side logic, authentication, and application data flows.',
   },
   {
     number: '03',
-    name: 'Database Design',
+    name: 'Languages',
+    logos: [{ file: 'typescript', name: 'TypeScript' }, { file: 'python', name: 'Python' }],
+    caption: 'Different languages. Clear intent.',
+    tools: ['TypeScript', 'JavaScript (ES6+)', 'Python', 'C++', 'Java (OOP)', 'SQL'],
     description:
-      'Structuring relational data, writing clean queries, and thinking through how information should move through a product.',
+      'Working with typed code, object-oriented programming, and database queries.',
   },
   {
     number: '04',
-    name: 'UI Engineering',
+    name: 'Databases & Cloud',
+    logos: [{ file: 'postgresql', name: 'PostgreSQL' }, { file: 'supabase', name: 'Supabase' }],
+    caption: 'Structure behind every application',
+    tools: ['PostgreSQL', 'Supabase', 'MySQL', 'MongoDB', 'Firebase Firestore'],
     description:
-      'Translating visual ideas into polished components, smooth motion, and interfaces that feel good across desktop and mobile.',
+      'Organizing application data with relational databases, document stores, and cloud services.',
   },
   {
     number: '05',
-    name: 'Problem Solving',
+    name: 'AI-Assisted Engineering',
+    logos: [{ file: 'githubcopilot', name: 'GitHub Copilot' }],
+    caption: 'Human direction. AI-assisted execution.',
+    tools: ['Prompt Engineering', 'LLM API Integration', 'Cursor / Copilot', 'Rapid Prototyping', 'Autonomous Agent Specs'],
     description:
-      'Breaking down requirements, debugging patiently, and learning quickly through coursework, experiments, and hands-on projects.',
+      'Using AI-assisted workflows to explore ideas, prototype software, and integrate language models.',
+  },
+  {
+    number: '06',
+    name: 'DevOps & Tooling',
+    logos: [{ file: 'docker', name: 'Docker' }, { file: 'git', name: 'Git' }],
+    caption: 'From local changes to deployment',
+    tools: ['Git & GitHub', 'Vercel Deployments', 'Docker Basics', 'Postman', 'Linux / Bash CLI', 'Figma (UI/UX)'],
+    description:
+      'Supporting development with version control, preview deployments, API testing, and design tools.',
   },
 ] as const;
 
@@ -42,30 +66,51 @@ export function ServicesSection() {
       <FadeIn
         as="h2"
         y={40}
-        className="mb-16 text-center text-[clamp(3rem,12vw,160px)] font-black uppercase leading-none tracking-tight text-[var(--panel-fg)] sm:mb-20 md:mb-28"
+        className="mb-6 text-center text-[clamp(3rem,12vw,160px)] font-black uppercase leading-none tracking-tight text-[var(--panel-fg)]"
       >
         Skills
       </FadeIn>
+      <p className="mx-auto mb-14 max-w-xl text-center text-base leading-relaxed opacity-75 sm:mb-20">
+        The tools I use to turn an idea into an interface, connect the data, and bring it to the web.
+      </p>
 
-      <div className="mx-auto max-w-5xl border-t border-[var(--panel-border)]">
+      <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3 sm:gap-6">
         {services.map((service, index) => (
           <FadeIn
             key={service.number}
             delay={index * 0.1}
             y={35}
-            className="grid grid-cols-[auto_1fr] items-start gap-5 border-b border-[var(--panel-border)] py-8 sm:gap-8 sm:py-10 md:gap-12 md:py-12"
+            as="article"
+            className="skill-card overflow-hidden rounded-[24px] border border-[var(--panel-border)] bg-[var(--panel-bg)]"
           >
-            <span className="text-[clamp(3rem,10vw,140px)] font-black leading-[0.8] tracking-tight text-[var(--panel-fg)]">
-              {service.number}
-            </span>
+            <div className="skill-visual relative border-b border-[var(--panel-border)] px-6 pb-4 pt-6">
+              <div className="flex h-40 items-center justify-center gap-5">
+                {service.logos.map((logo) => (
+                  <figure key={logo.file} className="flex flex-col items-center gap-3">
+                    <div className="grid h-20 w-20 place-items-center rounded-2xl bg-white p-4 shadow-sm sm:h-24 sm:w-24">
+                      <img src={`${import.meta.env.BASE_URL}images/skills/${logo.file}.svg`} alt="" width={64} height={64} loading="lazy" className="h-full w-full object-contain" />
+                    </div>
+                    <figcaption className="text-xs font-medium">{logo.name}</figcaption>
+                  </figure>
+                ))}
+              </div>
+              <p className="mt-2 text-center text-xs font-medium">{service.caption}</p>
+            </div>
 
-            <div className="pt-1 sm:pt-2 md:pt-3">
-              <h3 className="text-[clamp(1rem,2.2vw,2.1rem)] font-medium uppercase leading-tight tracking-tight">
+            <div className="p-6 sm:p-7">
+              <h3 className="text-2xl font-semibold leading-tight tracking-tight">
                 {service.name}
               </h3>
-              <p className="mt-3 max-w-2xl text-[clamp(0.85rem,1.6vw,1.25rem)] font-light leading-relaxed opacity-60 sm:mt-4">
+              <p className="mt-3 text-base font-light leading-relaxed opacity-75">
                 {service.description}
               </p>
+              <ul className="mt-6 flex flex-wrap gap-2" aria-label={`${service.name} tools and skills`}>
+                {service.tools.map((tool) => (
+                  <li key={tool} className="rounded-md border border-[var(--panel-border)] px-2.5 py-1.5 font-mono text-xs leading-relaxed">
+                    {tool}
+                  </li>
+                ))}
+              </ul>
             </div>
           </FadeIn>
         ))}

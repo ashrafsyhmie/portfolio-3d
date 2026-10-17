@@ -80,6 +80,73 @@ img {
   max-width: 100%;
 }
 
+main > section:nth-child(odd),
+:root[data-theme='light'] main > section:nth-child(even) {
+  --page-bg: #0c0c0c;
+  --page-fg: #d7e2ea;
+  --page-muted: rgba(215, 226, 234, 0.72);
+  --panel-bg: #0c0c0c;
+  --panel-fg: #d7e2ea;
+  --panel-border: rgba(215, 226, 234, 0.25);
+  --card-bg: #15191d;
+  --card-border: #d7e2ea;
+  --button-bg: rgba(255, 255, 255, 0.04);
+  --button-text: #d7e2ea;
+  --button-border: rgba(215, 226, 234, 0.3);
+  color: var(--page-fg);
+}
+
+main > section:nth-child(even),
+:root[data-theme='light'] main > section:nth-child(odd) {
+  --page-bg: #ffffff;
+  --page-fg: #15191d;
+  --page-muted: rgba(21, 25, 29, 0.72);
+  --panel-bg: #ffffff;
+  --panel-fg: #15191d;
+  --panel-border: rgba(21, 25, 29, 0.2);
+  --card-bg: #f5f7f8;
+  --card-border: #15191d;
+  --button-bg: rgba(21, 25, 29, 0.03);
+  --button-text: #15191d;
+  --button-border: rgba(21, 25, 29, 0.25);
+  color: var(--page-fg);
+}
+
+main > section .hero-heading,
+:root[data-theme='light'] main > section .hero-heading {
+  background-image: linear-gradient(180deg, var(--page-muted), var(--page-fg));
+}
+
+.contact-input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--button-border);
+  border-radius: 12px;
+  background: var(--page-bg);
+  color: var(--page-fg);
+  padding: 12px 16px;
+  font: inherit;
+}
+
+.contact-input:focus-visible {
+  outline: 2px solid var(--page-fg);
+  outline-offset: 3px;
+}
+
+.skill-card { --skill-ink: #245d96; --skill-tint: #edf4fb; }
+.skill-card:nth-child(2) { --skill-ink: #256653; --skill-tint: #edf6f1; }
+.skill-card:nth-child(3) { --skill-ink: #82512b; --skill-tint: #fbf3e9; }
+.skill-card:nth-child(4) { --skill-ink: #4f5596; --skill-tint: #f0f0fa; }
+.skill-card:nth-child(5) { --skill-ink: #865067; --skill-tint: #faf0f4; }
+.skill-card:nth-child(6) { --skill-ink: #356773; --skill-tint: #ecf5f6; }
+
+.skill-visual {
+  color: var(--skill-ink);
+  background-color: var(--skill-tint);
+  background-image: radial-gradient(currentColor 0.5px, transparent 0.5px);
+  background-size: 16px 16px;
+}
+
 .hero-heading {
   background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
   -webkit-background-clip: text;

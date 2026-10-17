@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 import { ThemeToggle } from './components/ThemeToggle';
 import { AboutSection } from './sections/AboutSection';
 import { HeroSection } from './sections/HeroSection';
-import { MarqueeSection } from './sections/MarqueeSection';
+import { ContactSection } from './sections/ContactSection';
 import { ProjectShowcaseSection } from './sections/ProjectShowcaseSection';
 import { ProjectsSection } from './sections/ProjectsSection';
 import { ServicesSection } from './sections/ServicesSection';
+import { MultimediaSection } from './sections/MultimediaSection';
 
 export function App() {
   const [isLightMode, setIsLightMode] = useState(() => {
@@ -23,11 +24,12 @@ export function App() {
     <>
       <main className="min-h-screen overflow-x-clip bg-[var(--page-bg)] transition-colors duration-300">
         <HeroSection />
-        <MarqueeSection />
         <AboutSection />
         <ServicesSection />
         <ProjectShowcaseSection />
         <ProjectsSection />
+        <MultimediaSection />
+        <ContactSection />
       </main>
       <ThemeToggle
         isLightMode={isLightMode}

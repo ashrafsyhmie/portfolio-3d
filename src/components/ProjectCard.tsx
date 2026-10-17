@@ -6,10 +6,10 @@ export interface ProjectData {
   number: string;
   name: string;
   category: string;
-  year: string;
+  status: string;
   description: string;
   scope: string[];
-  images: [string, string, string];
+  images: string[];
   href?: string;
 }
 
@@ -48,7 +48,7 @@ export function ProjectCard({
                 {project.number}
               </span>
               <div className="rounded-full border border-[var(--button-border)] px-4 py-2 text-xs font-light uppercase tracking-[0.22em] text-[var(--page-muted)]">
-                {project.year}
+                {project.status}
               </div>
             </div>
 
@@ -75,16 +75,16 @@ export function ProjectCard({
                   </li>
                 ))}
               </ul>
-              <LiveProjectButton href={project.href} />
+              {project.href && <LiveProjectButton href={project.href} />}
             </div>
           </div>
 
-          <div className="grid gap-3 sm:gap-4">
+           {project.images.length > 0 ? <div className="grid gap-3 sm:gap-4">
             <div className="group relative overflow-hidden rounded-[26px] border border-[var(--button-border)] bg-[var(--button-bg)] sm:rounded-[34px]">
               <img
-                src={project.images[2]}
+                src={project.images[0]}
                 alt={`${project.name} main presentation`}
-                className="h-[clamp(280px,42vw,560px)] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                className="h-[clamp(280px,42vw,560px)] w-full object-contain transition duration-700 group-hover:scale-[1.03]"
                 loading="lazy"
                 decoding="async"
               />
@@ -96,7 +96,7 @@ export function ProjectCard({
             </div>
 
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              {project.images.slice(0, 2).map((image, imageIndex) => (
+              {project.images.slice(1).map((image, imageIndex) => (
                 <div
                   key={image}
                   className="group overflow-hidden rounded-[22px] border border-[var(--button-border)] bg-[var(--button-bg)] sm:rounded-[30px]"
@@ -111,7 +111,9 @@ export function ProjectCard({
                 </div>
               ))}
             </div>
-          </div>
+          </div> : <div className="flex min-h-48 items-center justify-center rounded-[26px] border border-[var(--button-border)] bg-[var(--button-bg)] p-8 text-center text-[var(--page-muted)]">
+            Project screenshots coming soon.
+          </div>}
         </div>
       </motion.article>
     </div>
