@@ -1,6 +1,8 @@
 import thayyibPoster from '../assets/portfolio/thayyib-poster.webp';
 import gdgocPreview from '../assets/portfolio/gdgoc-preview.webp';
 import sentinelPreview from '../assets/portfolio/sentinel-u-preview.webp';
+import pdfkitPreview from '../assets/portfolio/pdfkit-preview.webp';
+import hazewatchPreview from '../assets/portfolio/hazewatch-preview.webp';
 
 export const projects = [
   {
@@ -30,5 +32,23 @@ export const projects = [
     purpose: 'The GDGoC UNITEN website introduces the campus developer community and supports its membership activities. It gives visitors a place to learn about the community and find ways to get involved.',
     contribution: 'I contributed as a developer to the community website. The live site and its homepage preview provide a view of the work.',
     context: 'Specific implementation responsibilities, technologies, and community outcomes will be added when those details are documented.',
+  },
+  {
+    number: '04', slug: 'pdfkit', name: 'PDFKit', category: 'Developer',
+    status: 'Working prototype',
+    description: 'A browser-based PDF toolkit for merging documents, extracting page ranges, and basic compression, with drag-and-drop uploads and downloadable results.',
+    scope: ['React', 'Vite', 'pdf-lib'], images: [pdfkitPreview], href: 'https://pdf-kit-remastered.vercel.app/',
+    purpose: 'PDFKit brings everyday document tasks into a single browser workspace. Users can combine PDFs, extract a contiguous range of pages, and re-save files using compressed object streams.',
+    contribution: 'I developed the React and Vite application, with reusable upload components and browser-side PDF workflows built on pdf-lib and PDF.js. The interface includes dedicated tool pages, file metadata, and download actions.',
+    context: 'Built with React, Vite, Tailwind CSS, and React Router. Compression re-saves PDF objects rather than downsampling images, so file-size reductions vary. The conversion screen is a mock flow that downloads JSON metadata; document conversion is not implemented.',
+  },
+  {
+    number: '05', slug: 'hazewatch', name: 'HazeWatch', category: 'Developer',
+    status: 'Live dashboard',
+    description: 'A Malaysia air-quality dashboard that brings official APIMS station readings, an interactive map, recent trends, and practical health guidance into one place.',
+    scope: ['Next.js', 'Supabase', 'MapLibre'], images: [hazewatchPreview], href: 'https://hazewatch-drab.vercel.app/',
+    purpose: 'HazeWatch makes Malaysia’s air-quality readings easier to explore. Visitors can search monitoring stations, filter by state, check national conditions, and follow changes at individual locations.',
+    contribution: 'I developed the dashboard with Next.js, TypeScript, and Tailwind CSS, using MapLibre for station mapping and Supabase for the optional observation archive. It includes station history charts, six-hour trend comparisons, nearby-station discovery, and API-band health guidance.',
+    context: 'Observations come from DOE APIMS, with source attribution, timestamps, and freshness indicators. Trend insights describe observed changes rather than forecasts. Location lookup runs in the browser, and the dashboard supports live readings without a configured archive. The preview shows a snapshot, not current conditions.',
   },
 ];

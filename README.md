@@ -25,6 +25,16 @@ A home for the Google Developer Groups on Campus community at UNITEN. I contribu
 
 [Meet the community](https://www.gdgocuniten.my/)
 
+### PDFKit
+A little less PDF juggling. Merge documents, pull out the pages you need, and try basic compression right in your browser. Conversion is still a prototype.
+
+[Try PDFKit](https://pdf-kit-remastered.vercel.app/)
+
+### HazeWatch
+What’s the air like near you? Explore Malaysia’s monitoring stations on a map, check official readings, and follow how conditions are changing.
+
+[Check the air with HazeWatch](https://hazewatch-drab.vercel.app/)
+
 ## A little about my journey
 
 - **2025–2028 · Universiti Tenaga Nasional (UNITEN)** — Bachelor of Software Engineering (Hons.), GPA 3.94, JPA Scholar.

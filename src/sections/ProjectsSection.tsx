@@ -8,7 +8,7 @@ export function ProjectsSection() {
       <div className="mx-auto mb-14 flex max-w-[1500px] flex-col gap-5 text-center sm:mb-20 md:mb-24">
         <FadeIn as="h2" y={40} className="hero-heading text-[clamp(3.25rem,12vw,150px)] font-black uppercase leading-none tracking-tight">Projects</FadeIn>
         <FadeIn as="p" delay={0.08} y={24} className="mx-auto max-w-2xl text-[clamp(0.95rem,1.8vw,1.25rem)] font-light leading-relaxed text-[var(--page-muted)]">
-          Software for compliance, campus safety, and community. Explore my roles and the purpose behind each project.
+          Software for everyday tasks, community, and the world around us. Explore my roles and the purpose behind each project.
         </FadeIn>
       </div>
       <div className="mx-auto max-w-[1600px]">

@@ -1,7 +1,8 @@
 # Search visibility
 
 The production build generates complete HTML for `/`, `/projects/thayyib`,
-`/projects/sentinel-u`, and `/projects/gdgoc-uniten`, plus a noindex 404 page.
+`/projects/sentinel-u`, `/projects/gdgoc-uniten`, `/projects/pdfkit`, and
+`/projects/hazewatch`, plus a noindex 404 page.
 React hydrates these pages for interaction. No server runtime is needed.
 
 Every indexable page has a unique title, description, canonical URL, social
@@ -17,7 +18,7 @@ shared in `src/data/projects.ts`. Add verified case-study details there.
    Keep existing records. Do not invent or reuse another property's value.
 3. Complete verification in Search Console.
 4. Submit `https://ashrafsyhmie.my/sitemap.xml`.
-5. Inspect the homepage and three project URLs; request indexing where appropriate.
+5. Inspect the homepage and five project URLs; request indexing where appropriate.
 6. Monitor Pages, Performance, and Core Web Vitals. Field metrics require traffic
    and time; a successful deployment is not evidence of indexing or rankings.
 

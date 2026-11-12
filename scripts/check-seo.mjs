@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
 
-const paths = ['/', '/projects/thayyib', '/projects/sentinel-u', '/projects/gdgoc-uniten'];
+const paths = ['/', '/projects/thayyib', '/projects/sentinel-u', '/projects/gdgoc-uniten', '/projects/pdfkit', '/projects/hazewatch'];
 const sitemap = await readFile('dist/sitemap.xml', 'utf8');
 const titles = new Set();
 for (const path of paths) {
