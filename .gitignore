@@ -4,3 +4,5 @@ dist
 *.local
 *.tsbuildinfo
 *.log
+.prerender
+.impeccable

@@ -50,7 +50,7 @@ export function FadeIn<T extends ElementType = 'div'>({
 
   return createElement(MotionComponent, {
     ...props,
-    initial: 'hidden',
+    initial: false,
     whileInView: 'visible',
     viewport: { once: true, margin: '50px', amount: 0 },
     variants,

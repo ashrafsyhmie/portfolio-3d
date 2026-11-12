@@ -1,7 +1,8 @@
 import { ContactButton } from '../components/ContactButton';
 import { FadeIn } from '../components/FadeIn';
 import { Magnet } from '../components/Magnet';
-import heroImage from '../assets/portfolio/hero-image.png';
+import heroImage from '../assets/portfolio/hero-image.webp';
+import heroImageSmall from '../assets/portfolio/hero-image-small.webp';
 
 const navItems = [
   { label: 'About', href: '#about' },
@@ -31,6 +32,7 @@ export function HeroSection() {
       <div className="relative z-0 mt-6 overflow-hidden sm:mt-4 md:-mt-5">
         <FadeIn
           as="h1"
+          aria-label="Ashraf Syahmie — Software Engineering Student and Developer in Malaysia"
           delay={0.15}
           y={40}
           className="hero-marquee w-full overflow-hidden text-[20vw] font-black uppercase leading-none tracking-tight sm:text-[18vw] md:text-[16vw] lg:text-[15vw]"
@@ -62,12 +64,14 @@ export function HeroSection() {
             className="pointer-events-auto"
           >
             <img
-              src={heroImage}
+               src={heroImage}
+               srcSet={`${heroImageSmall} 520w, ${heroImage} 1040w`}
+               sizes="(max-width: 639px) 280px, (max-width: 1023px) 55vw, 520px"
               alt="Ashraf, software engineering student"
                className="h-auto w-full select-none object-contain"
                width={1982}
                height={1915}
-               fetchPriority="high"
+               {...{ fetchpriority: 'high' }}
               draggable={false}
             />
           </Magnet>

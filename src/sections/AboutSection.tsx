@@ -1,9 +1,8 @@
-import { AnimatedText } from '../components/AnimatedText';
 import { ContactButton } from '../components/ContactButton';
 import { FadeIn } from '../components/FadeIn';
-import basketballGlass from '../assets/about/basketball-glass.png';
-import gdgGlass from '../assets/about/gdg-glass.png';
-import vscodeGlass from '../assets/about/vscode-glass.png';
+import basketballGlass from '../assets/about/basketball-glass.webp';
+import gdgGlass from '../assets/about/gdg-glass.webp';
+import vscodeGlass from '../assets/about/vscode-glass.webp';
 
 const aboutText =
   "I'm Ashraf Syahmie, a Software Engineering student at Universiti Tenaga Nasional (UNITEN), Malaysia. My work spans halal compliance management, university disaster management, and developer community websites. I served as Development Lead for Thayyib, a halal compliance management system that earned runner-up in a hackathon, and contributed as a developer to Sentinel-U and the GDGoC UNITEN website. I enjoy turning practical problems into useful digital experiences and learning through hands-on projects. My focus is on growing as a developer while building software with a clear purpose for the people who use it.";
@@ -103,10 +102,8 @@ export function AboutSection() {
             ))}
           </div>
 
-          <AnimatedText
-            text={aboutText}
-            className="max-w-[560px] text-center text-[clamp(1rem,2vw,1.35rem)] font-medium leading-relaxed text-[var(--page-fg)]"
-          />
+          <p className="max-w-[560px] text-center text-[clamp(1rem,2vw,1.35rem)] font-medium leading-relaxed text-[var(--page-fg)]">{aboutText}</p>
+          <a href="/projects/thayyib" className="underline underline-offset-4">Explore my work on Thayyib</a>
 
           <FadeIn
             delay={0.16}

@@ -4,6 +4,7 @@ import { LiveProjectButton } from './LiveProjectButton';
 
 export interface ProjectData {
   number: string;
+  slug: string;
   name: string;
   category: string;
   status: string;
@@ -11,6 +12,7 @@ export interface ProjectData {
   scope: string[];
   images: string[];
   href?: string;
+  video?: string;
 }
 
 interface ProjectCardProps {
@@ -76,18 +78,21 @@ export function ProjectCard({
                 ))}
               </ul>
               {project.href && <LiveProjectButton href={project.href} />}
+              <a href={`/projects/${project.slug}`} className="text-[var(--page-fg)] underline underline-offset-4">Read about {project.name}</a>
             </div>
           </div>
 
            {project.images.length > 0 ? <div className="grid gap-3 sm:gap-4">
             <div className="group relative overflow-hidden rounded-[26px] border border-[var(--button-border)] bg-[var(--button-bg)] sm:rounded-[34px]">
-              <img
+              {project.video ? <video src={project.video} poster={project.images[0]} controls playsInline preload="none" aria-label={`${project.name} demonstration`} className="h-[clamp(280px,42vw,560px)] w-full object-contain" /> : <img
                 src={project.images[0]}
                 alt={`${project.name} main presentation`}
                 className="h-[clamp(280px,42vw,560px)] w-full object-contain transition duration-700 group-hover:scale-[1.03]"
                 loading="lazy"
                 decoding="async"
-              />
+                width={1280}
+                height={565}
+              />}
               <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-5 text-white sm:p-7">
                 <p className="text-xs font-light uppercase tracking-[0.26em] text-white/70">
                   Featured frame
